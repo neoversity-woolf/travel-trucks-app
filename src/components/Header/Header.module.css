@@ -1,0 +1,45 @@
+.header {
+  position: sticky;
+  top: -1px;
+  grid-area: header;
+
+  display: flex;
+  align-items: center;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+
+    width: 100dvw;
+    height: 100%;
+    background: var(--Inputs, #f7f7f7);
+    border-bottom: 1px solid var(--Badges, #f2f4f7);
+  }
+}
+.logo {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav {
+  flex-grow: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  a {
+    padding: 24px 0;
+    /* Body 2 */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+    color: var(--Main, #101828);
+  }
+}

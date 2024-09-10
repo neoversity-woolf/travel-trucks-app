@@ -1,0 +1,15 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-width: 166px;
+  min-height: 56px;
+  padding: 16px 60px;
+  border-radius: 200px;
+  background: var(--Button, #e44848);
+  border: 1px solid transparent;
+}
+
+.home {
+}
