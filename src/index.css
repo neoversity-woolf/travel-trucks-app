@@ -32,8 +32,18 @@ body {
     '. main .';
   grid-template-columns: minmax(1rem, 4rem) 1fr minmax(1rem, 4rem);
   grid-template-rows: auto 1fr;
+  row-gap: 3rem;
 
   min-height: 100dvh;
+  padding-bottom: 3rem;
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
 }
 
 img {
@@ -55,4 +65,41 @@ button {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   overflow: hidden;
+}
+.pageLink {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 166px;
+  padding: 1rem 2rem;
+
+  /* Button */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.08px;
+
+  border-radius: 200px;
+  transition: 200ms ease-in;
+  transition-property: background-color, border-color;
+
+  &.filled {
+    color: var(--White, #fff);
+    background-color: var(--Button, #e44848);
+
+    &:hover,
+    &:focus {
+      background-color: var(--Button-Hover, #d84343);
+    }
+  }
+
+  &.outlined {
+    color: var(--Main, #101828);
+    border: 1px solid var(--Gray-light, #dadde1);
+    &:hover,
+    &:focus {
+      border-color: var(--Button-Hover, #d84343);
+    }
+  }
 }

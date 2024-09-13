@@ -1,0 +1,20 @@
+.badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 0.75rem 1.125rem;
+  border-radius: 100px;
+  background: var(--Badges, #f2f4f7);
+  mix-blend-mode: multiply;
+
+  color: var(--Main, #101828);
+
+  /* Body 2 */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 150% */
+}

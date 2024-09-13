@@ -1,4 +1,4 @@
-import { Camper, Button } from '@components';
+import { Card, Button } from '@components';
 
 import css from './CampersList.module.css';
 import { items } from './fakeCampers.json';
@@ -9,7 +9,7 @@ export default function CampersList() {
       <h2 className="visuallyHidden">Campers list</h2>
       <ul className={css.list}>
         {items.map(item => (
-          <Camper {...item} key={item.id} />
+          <Card {...item} key={item.id} />
         ))}
       </ul>
 

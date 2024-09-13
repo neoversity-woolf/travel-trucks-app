@@ -9,16 +9,6 @@
   background: var(--White, #fff);
 }
 
-.cardThumb {
-  flex-shrink: 0.9;
-  overflow: hidden;
-  border-radius: 0.625rem;
-}
-.cardIll {
-  aspect-ratio: 0.91 / 1;
-  object-fit: cover;
-  object-position: center;
-}
 .cardBody {
   display: flex;
   flex-direction: column;
@@ -80,29 +70,4 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   overflow: hidden;
-}
-.cardOptions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-.option {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-
-  padding: 0.75rem 1.125rem;
-  border-radius: 100px;
-  background: var(--Badges, #f2f4f7);
-  mix-blend-mode: multiply;
-
-  color: var(--Main, #101828);
-
-  /* Body 2 */
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px; /* 150% */
 }

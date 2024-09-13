@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import { BsMap, BsStarFill, BsSuitHeart } from 'react-icons/bs';
-import { BsWind, BsDiagram3 } from 'react-icons/bs';
 import { Button } from '@components';
+import { Picture, BadgesList } from '@components/camper';
 
-import css from './Camper.module.css';
+import css from './Card.module.css';
 
-export default function Camper({
+export default function Card({
   id,
   name,
   price,
@@ -17,9 +17,7 @@ export default function Camper({
 }) {
   return (
     <li className={css.card}>
-      <div className={css.cardThumb}>
-        <img className={css.cardIll} src={poster.original} alt={name} />
-      </div>
+      <Picture poster={poster} alt={name} />
 
       <div className={css.cardBody}>
         <div className={css.cardTop}>
@@ -47,25 +45,12 @@ export default function Camper({
         </div>
 
         <div className="cardBottom">
-          <ul className={css.cardOptions}>
-            <li className={css.option}>
-              <BsDiagram3 size={20} />
-              <span>Automatic</span>
-            </li>
-            <li className={css.option}>
-              <span>Petrol</span>
-            </li>
-            <li className={css.option}>
-              <span>Kitchen</span>
-            </li>
-            <li className={css.option}>
-              <BsWind size={20} />
-              <span>AC</span>
-            </li>
-          </ul>
+          <BadgesList />
         </div>
 
-        <Link to={`${id}`}>Show more</Link>
+        <Link className="pageLink filled" to={`${id}`}>
+          Show more
+        </Link>
       </div>
     </li>
   );

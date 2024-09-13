@@ -2,8 +2,6 @@
   position: sticky;
   top: -1px;
   z-index: var(--z-idx-header);
-  grid-area: header;
-
   display: flex;
   align-items: center;
 

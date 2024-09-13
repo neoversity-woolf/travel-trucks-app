@@ -9,7 +9,7 @@ function Home() {
       <p className={css.slogan}>
         You can find everything you want in our catalog
       </p>
-      <Link to="/catalog" className={css.link}>
+      <Link to="/catalog" className="pageLink filled">
         View Now
       </Link>
     </main>

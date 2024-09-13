@@ -1,0 +1,10 @@
+.cardThumb {
+  flex-shrink: 0.9;
+  overflow: hidden;
+  border-radius: 0.625rem;
+}
+.cardIll {
+  aspect-ratio: 0.91 / 1;
+  object-fit: cover;
+  object-position: center;
+}
