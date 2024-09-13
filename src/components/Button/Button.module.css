@@ -3,13 +3,42 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  min-width: 166px;
+  min-width: 145px;
   min-height: 56px;
-  padding: 16px 60px;
+  margin-top: auto;
+  padding: 16px 32px;
   border-radius: 200px;
-  background: var(--Button, #e44848);
   border: 1px solid transparent;
+  background-color: transparent;
 }
 
-.home {
+.filled {
+  composes: btn;
+
+  color: var(--White, #fff);
+  background-color: var(--Button, #e44848);
+
+  &:hover,
+  &:focus {
+    background-color: var(--Button-Hover, #d84343);
+  }
+}
+.outlined {
+  composes: btn;
+
+  color: var(--Main, #101828);
+  border-color: var(--Gray-light, #dadde1);
+
+  &:hover,
+  &:focus {
+    border-color: var(--Button, #e44848);
+  }
+}
+.centered {
+  margin: 0 auto;
+}
+.iconOnly {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

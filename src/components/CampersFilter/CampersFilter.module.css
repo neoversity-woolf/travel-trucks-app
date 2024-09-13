@@ -1,0 +1,110 @@
+.filters {
+  grid-area: filters;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+.group {
+  width: 100%;
+  :is(.options) & {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem 0.75rem;
+
+    padding-top: 4.5rem;
+  }
+}
+:is(.options) .group::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--Gray-light, #dadde1);
+}
+.caption {
+  /* Body */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  color: var(--Gray, #6c717b);
+
+  :is(.options) & {
+    /* H3 */
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 120% */
+    color: var(--Main, #101828);
+  }
+}
+.wrapper {
+  position: relative;
+  display: block;
+}
+.fieldIcon {
+  position: absolute;
+  top: 50%;
+  left: 1.25rem;
+  transform: translateY(-50%);
+}
+.field {
+  width: 100%;
+  height: 3.5rem;
+  padding: 1.125rem 1.25rem 1.125rem 3rem;
+  border-radius: 12px;
+  background: var(--Inputs, #f7f7f7);
+}
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.title {
+  /* Body 2 */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  color: var(--Text, #475467);
+}
+.option {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 1rem;
+  border: 1px solid var(--Gray-light, #dadde1);
+  border-radius: 10px;
+  transition: 200ms ease-in;
+  transition-property: border-color;
+  cursor: pointer;
+
+  &:has(input[type='radio']:checked),
+  &:has(input[type='checkbox']:checked) {
+    border-color: rgba(228, 72, 72, 1);
+  }
+}
+.optionText {
+  color: var(--Main, #101828);
+  text-align: center;
+
+  /* Button */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.08px;
+}

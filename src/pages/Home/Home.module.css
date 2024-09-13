@@ -73,4 +73,9 @@
 
   border-radius: 200px;
   background: var(--Button, #e44848);
+
+  &:hover,
+  &:focus {
+    background: rgba(216, 67, 67, 1);
+  }
 }

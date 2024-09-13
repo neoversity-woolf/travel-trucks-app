@@ -33,7 +33,7 @@
   justify-content: center;
   gap: 2rem;
 
-  a {
+  .link {
     padding: 24px 0;
     /* Body 2 */
     font-size: 16px;
@@ -41,5 +41,9 @@
     font-weight: 500;
     line-height: 24px; /* 150% */
     color: var(--Main, #101828);
+
+    &.active {
+      color: rgba(216, 67, 67, 1);
+    }
   }
 }

@@ -1,0 +1,13 @@
+.main {
+  grid-area: main;
+
+  display: grid;
+  grid-template-columns: 22.5rem 1fr;
+  grid-template-areas: 'filters campers';
+  gap: 4rem;
+  padding: 3rem 0;
+
+  @media only screen and (max-width: 1023.99px) {
+    grid-template-areas: 'filters filters' 'campers campers';
+  }
+}

@@ -1,0 +1,311 @@
+{
+  "total": 6,
+  "items": [
+    {
+      "id": "3",
+      "name": "Britz 4 Berth",
+      "price": 9000,
+      "rating": 4.4,
+      "location": "Ukraine, Dnipro",
+      "description": "Experience luxury on the road with the Britz 4 Berth motorhome. Perfect for couples or small families, this alcove-style RV combines style, comfort, and functionality to provide an unforgettable travel experience. Whether you're exploring scenic landscapes or camping under the stars, the Britz 4 Berth offers a home-like atmosphere wherever your adventures take you.",
+      "form": "alcove",
+      "length": "6.4m",
+      "width": "2.65m",
+      "height": "3.65m",
+      "tank": "208l",
+      "consumption": "30l/100km",
+      "transmission": "manual",
+      "engine": "petrol",
+      "AC": true,
+      "bathroom": true,
+      "kitchen": true,
+      "TV": true,
+      "radio": true,
+      "refrigerator": true,
+      "microwave": true,
+      "gas": false,
+      "water": true,
+      "gallery": [
+        {
+          "thumb": "https://ftp.goit.study/img/campers-test-task/3-1.webp",
+          "original": "https://ftp.goit.study/img/campers-test-task/3-1.webp"
+        },
+        {
+          "thumb": "https://ftp.goit.study/img/campers-test-task/3-2.webp",
+          "original": "https://ftp.goit.study/img/campers-test-task/3-2.webp"
+        },
+        {
+          "thumb": "https://ftp.goit.study/img/campers-test-task/3-3.webp",
+          "original": "https://ftp.goit.study/img/campers-test-task/3-3.webp"
+        }
+      ],
+      "reviews": [
+        {
+          "reviewer_name": "Alice",
+          "reviewer_rating": 5,
+          "comment": "The Britz 4 Berth is a fantastic choice for a comfortable and stylish road trip. The interior design is impressive, and the amenities provided a luxury touch. Highly recommended for couples seeking a premium RV experience."
+        },
+        {
+          "reviewer_name": "Bob",
+          "reviewer_rating": 3,
+          "comment": "Decent motorhome overall. The Britz 4 Berth provided a comfortable stay, but the lack of gas for cooking was a downside. The entertainment options were good, and the bed was comfortable. Worth considering for a short trip."
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Road Bear A 30-32",
+      "price": 14000,
+      "rating": 4.4,
+      "location": "Ukraine, Kharkiv",
+      "description": "Embark on a luxurious journey with the Road Bear A 30-32, a fully integrated motorhome designed to elevate your travel experience. This spacious and stylish RV is perfect for families or groups of six, offering a seamless blend of comfort, convenience, and sophistication. Explore the open roads in unparalleled style with the Road Bear A 30-32.",
+      "form": "fullyIntegrated",
+      "length": "9.45m",
+      "width": "2.65m",
+      "height": "3.95m",
+      "tank": "302l",
+      "consumption": "38l/100km",
+      "transmission": "automatic",
+      "engine": "hybrid",
+      "AC": true,
+      "bathroom": true,
+      "kitchen": true,
+      "TV": true,
+      "radio": true,
+      "refrigerator": true,
+      "microwave": true,
+      "gas": true,
+      "water": true,
+      "gallery": [
+        {
+          "thumb": "https://ftp.goit.study/img/campers-test-task/6-1.webp",
+          "original": "https://ftp.goit.study/img/campers-test-task/6-1.webp"
+        },
+        {
+          "thumb": "https://ftp.goit.study/img/campers-test-task/6-2.webp",
+          "original": "https://ftp.goit.study/img/campers-test-task/6-2.webp"
+        },
+        {
+          "thumb": "https://ftp.goit.study/img/campers-test-task/6-3.webp",
+          "original": "https://ftp.goit.study/img/campers-test-task/6-3.webp"
+        }
+      ],
+      "reviews": [
+        {
+          "reviewer_name": "Alice",
+          "reviewer_rating": 5,
+          "comment": "The Road Bear A 30-32 exceeded our expectations! A spacious and well-designed motorhome with all the amenities one could ask for. The fully integrated features added a touch of luxury to our road trip. Highly recommended for families seeking a premium RV experience."
+        },
+        {
+          "reviewer_name": "Bob",
+          "reviewer_rating": 3,
+          "comment": "The Road Bear A 30-32 is a decent option for a large group. However, we faced some minor issues with functionality during our trip. The overall experience was satisfactory, but improvements can be made for the price."
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Santa Cruz",
+      "price": 7500,
+      "rating": 4.4,
+      "location": "Ukraine, Lviv",
+      "description": "Embark on a minimalist journey with the Santa Cruz panel truck, designed for solo travelers or couples seeking a compact and nimble vehicle for their adventures. This pocket-sized panel truck offers the essentials for a comfortable and efficient road trip, allowing you to explore the world with simplicity and style.",
+      "form": "panelTruck",
+      "length": "4.4m",
+      "width": "1.83m",
+      "height": "1.85m",
+      "tank": "60l",
+      "consumption": "8.7l/100km",
+      "transmission": "automatic",
+      "engine": "diesel",
+      "AC": true,
+      "bathroom": false,
+      "kitchen": true,
+      "TV": false,
+      "radio": true,
+      "refrigerator": false,
+      "microwave": false,
+      "gas": false,
+      "water": false,
+      "gallery": [
+        {
+          "thumb": "https://ftp.goit.study/img/campers-test-task/9-1.webp",
+          "original": "https://ftp.goit.study/img/campers-test-task/9-1.webp"
+        },
+        {
+          "thumb": "https://ftp.goit.study/img/campers-test-task/9-2.webp",
+          "original": "https://ftp.goit.study/img/campers-test-task/9-2.webp"
+        },
+        {
+          "thumb": "https://ftp.goit.study/img/campers-test-task/9-3.webp",
+          "original": "https://ftp.goit.study/img/campers-test-task/9-3.webp"
+        }
+      ],
+      "reviews": [
+        {
+          "reviewer_name": "Alice",
+          "reviewer_rating": 5,
+          "comment": "The Santa Cruz is perfect for a solo adventure. Compact, easy to maneuver, and with all the necessary amenities. The kitchen facilities were handy, and the overall experience was fantastic."
+        },
+        {
+          "reviewer_name": "Bob",
+          "reviewer_rating": 3,
+          "comment": "A good option for solo travel. The Santa Cruz provided a comfortable stay, but the lack of bathroom facilities may be a concern for some. Ideal for short trips where simplicity is the priority."
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Mesa",
+      "price": 7500,
+      "rating": 4.4,
+      "location": "Ukraine, Kyiv",
+      "description": "Experience the freedom of the open road with the Mesa panel truck, designed for solo adventurers or couples seeking a nimble and compact vehicle for their travels. With a sleek design and essential amenities, the Mesa offers a hassle-free journey, allowing you to explore new horizons with ease and style.",
+      "form": "panelTruck",
+      "length": "6.04m",
+      "width": "1.06m",
+      "height": "2.3m",
+      "tank": "94l",
+      "consumption": "12.4l/100km",
+      "transmission": "manual",
+      "engine": "hybrid",
+      "AC": true,
+      "bathroom": false,
+      "kitchen": true,
+      "TV": false,
+      "radio": true,
+      "refrigerator": false,
+      "microwave": false,
+      "gas": false,
+      "water": true,
+      "gallery": [
+        {
+          "thumb": "https://ftp.goit.study/img/campers-test-task/10-1.webp",
+          "original": "https://ftp.goit.study/img/campers-test-task/10-1.webp"
+        },
+        {
+          "thumb": "https://ftp.goit.study/img/campers-test-task/10-2.webp",
+          "original": "https://ftp.goit.study/img/campers-test-task/10-2.webp"
+        },
+        {
+          "thumb": "https://ftp.goit.study/img/campers-test-task/10-3.webp",
+          "original": "https://ftp.goit.study/img/campers-test-task/10-3.webp"
+        }
+      ],
+      "reviews": [
+        {
+          "reviewer_name": "Alice",
+          "reviewer_rating": 5,
+          "comment": "The Mesa panel truck is perfect for solo travelers. Its compact size makes it easy to navigate, and the basic amenities provided a comfortable experience. Highly recommended for those looking for simplicity on their journeys."
+        },
+        {
+          "reviewer_name": "Bob",
+          "reviewer_rating": 3,
+          "comment": "The Mesa is a decent option for solo travel. While the amenities are basic, it offers a hassle-free experience for short trips. The compact design is an advantage for city travel."
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Kuga Camper",
+      "price": 8500,
+      "rating": 4.4,
+      "location": "Ukraine, Kyiv",
+      "description": "Embark on a comfortable and convenient road trip with the Kuga Camper panel truck. Designed for small groups or couples, this compact camper offers a blend of functionality and style. Explore the open roads with ease, enjoy the convenience of on-the-go cooking, and experience the freedom of a camper designed for memorable adventures.",
+      "form": "panelTruck",
+      "length": "5.6m",
+      "width": "2m",
+      "height": "3.1m",
+      "tank": "117l",
+      "consumption": "15l/100km",
+      "transmission": "automatic",
+      "engine": "diesel",
+      "AC": true,
+      "bathroom": false,
+      "kitchen": true,
+      "TV": false,
+      "radio": true,
+      "refrigerator": false,
+      "microwave": true,
+      "gas": true,
+      "water": false,
+      "gallery": [
+        {
+          "thumb": "https://ftp.goit.study/img/campers-test-task/11-1.webp",
+          "original": "https://ftp.goit.study/img/campers-test-task/11-1.webp"
+        },
+        {
+          "thumb": "https://ftp.goit.study/img/campers-test-task/11-2.webp",
+          "original": "https://ftp.goit.study/img/campers-test-task/11-2.webp"
+        },
+        {
+          "thumb": "https://ftp.goit.study/img/campers-test-task/11-3.webp",
+          "original": "https://ftp.goit.study/img/campers-test-task/11-3.webp"
+        }
+      ],
+      "reviews": [
+        {
+          "reviewer_name": "Alice",
+          "reviewer_rating": 5,
+          "comment": "The Kuga Camper exceeded our expectations! Compact yet spacious enough for a small group, it provided all the necessary amenities for a comfortable journey. The kitchen facilities were a definite plus, making our road trip enjoyable."
+        },
+        {
+          "reviewer_name": "Bob",
+          "reviewer_rating": 3,
+          "comment": "A decent option for a small group or couple. The Kuga Camper offered convenience, but the lack of a TV was a downside for entertainment. Overall, a comfortable camper for short trips."
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "name": "El Monte Class B Small [B]",
+      "price": 10000,
+      "rating": 4.4,
+      "location": "Ukraine, Odesa",
+      "description": "Discover the perfect blend of comfort and convenience with the El Monte Class B Small [B]. Ideal for couples with children, this compact panel truck offers a cozy interior with all the essential amenities for a delightful journey. Enjoy the freedom of the open road while relishing the convenience of on-the-go living in this stylish and well-equipped camper.",
+      "form": "panelTruck",
+      "length": "6m",
+      "width": "2.06m",
+      "height": "2.87m",
+      "tank": "117l",
+      "consumption": "14l/100km",
+      "transmission": "manual",
+      "engine": "diesel",
+      "AC": true,
+      "bathroom": true,
+      "kitchen": true,
+      "TV": false,
+      "radio": true,
+      "refrigerator": true,
+      "microwave": false,
+      "gas": true,
+      "water": false,
+      "gallery": [
+        {
+          "thumb": "https://ftp.goit.study/img/campers-test-task/13-1.webp",
+          "original": "https://ftp.goit.study/img/campers-test-task/13-1.webp"
+        },
+        {
+          "thumb": "https://ftp.goit.study/img/campers-test-task/13-2.webp",
+          "original": "https://ftp.goit.study/img/campers-test-task/13-2.webp"
+        },
+        {
+          "thumb": "https://ftp.goit.study/img/campers-test-task/13-3.webp",
+          "original": "https://ftp.goit.study/img/campers-test-task/13-3.webp"
+        }
+      ],
+      "reviews": [
+        {
+          "reviewer_name": "Alice",
+          "reviewer_rating": 5,
+          "comment": "The El Monte Class B Small [B] exceeded our expectations! The spacious interior and well-equipped kitchen made our family road trip comfortable and enjoyable. Highly recommended for families seeking a stylish and convenient camper experience."
+        },
+        {
+          "reviewer_name": "Bob",
+          "reviewer_rating": 3,
+          "comment": "A decent choice for a family trip. The El Monte Class B Small [B] provided a comfortable stay, but the absence of a TV might be a drawback for entertainment. Overall, a convenient option for a family road adventure."
+        }
+      ]
+    }
+  ]
+}

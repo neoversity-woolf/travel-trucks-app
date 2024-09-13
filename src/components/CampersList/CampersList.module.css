@@ -1,0 +1,10 @@
+.campers {
+  grid-area: campers;
+}
+
+.list {
+  display: grid;
+  gap: 2rem;
+
+  margin-bottom: 2.5rem;
+}

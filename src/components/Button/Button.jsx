@@ -1,9 +1,18 @@
+import clsx from 'clsx';
 import css from './Button.module.css';
 
-export default function Button({ content, type = 'button' }) {
+const buttonClass = ({ filled, outlined, centered, iconOnly }) =>
+  clsx(
+    filled && css.filled,
+    outlined && css.outlined,
+    centered && css.centered,
+    iconOnly && css.iconOnly
+  );
+
+export default function Button({ children, type = 'button', ...params }) {
   return (
-    <button className={css.home} type={type}>
-      {content}
+    <button className={buttonClass(params)} type={type}>
+      {children}
     </button>
   );
 }
