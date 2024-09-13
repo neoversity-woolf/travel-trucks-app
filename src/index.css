@@ -13,6 +13,9 @@
   --fs-md: 20px;
   --fs-lg: 24px;
   --fs-xl: 48px;
+
+  /* Positioning elements */
+  --z-idx-header: 999;
 }
 
 body {
