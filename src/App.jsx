@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Home, Catalog, Details, Features, Reviews, NotFound } from '@pages';
-import { Header } from '@components';
+import { Home, Catalog, Details, NotFound } from '@pages';
+import { Header, Features, Reviews } from '@components';
 
 function App() {
   // Fetch
@@ -14,7 +14,7 @@ function App() {
         <Route path="/" index element={<Home />} />
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/catalog/:id" element={<Details />}>
-          <Route path="feature" element={<Features />} />
+          <Route index element={<Features />} />
           <Route path="reviews" element={<Reviews />} />
         </Route>
         <Route path="*" element={<NotFound />} />

@@ -4,9 +4,7 @@ import logoPath from '@assets/logo.svg';
 
 import css from './Header.module.css';
 
-const navLinkClass = ({ isActive }) => {
-  return clsx(css.link, isActive && css.active);
-};
+const navLinkClass = ({ isActive }) => clsx(css.link, isActive && css.active);
 
 function Header() {
   return (

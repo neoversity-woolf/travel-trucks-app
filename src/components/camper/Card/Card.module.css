@@ -8,7 +8,6 @@
   border: 1px solid var(--Gray-light, #dadde1);
   background: var(--White, #fff);
 }
-
 .cardBody {
   display: flex;
   flex-direction: column;
@@ -16,58 +15,7 @@
   gap: 1.5rem;
   height: 100%;
 }
-.cardTop {
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  gap: 0.5rem 0.75rem;
-  width: 100%;
-}
-.title {
-  flex-grow: 1;
-  /* H2 */
-  font-family: Inter;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 32px; /* 133.333% */
-  color: var(--Main, #101828);
-}
-.price {
-  /* H2 */
-  font-family: Inter;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 32px; /* 133.333% */
-  color: var(--Main, #101828);
-}
-.wrapper {
-  grid-column-start: 1;
-  grid-column-end: 4;
-
-  display: flex;
-  gap: 1rem;
-}
-.reviews,
-.location {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-
-  /* Body underline */
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px; /* 150% */
-  text-decoration-line: underline;
-  color: var(--Main, #101828);
-}
 .cardCenter {
 }
-.desc {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
+.cardBottom {
 }

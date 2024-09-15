@@ -1,0 +1,8 @@
+.features {
+  display: grid;
+  gap: 6.25rem;
+
+  padding: 2.75rem;
+  border-radius: 0.625rem;
+  background-color: var(--Inputs, #f7f7f7);
+}

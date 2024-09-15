@@ -1,7 +1,12 @@
-import { useParams } from 'react-router-dom';
+import { NavLink, Outlet, useParams } from 'react-router-dom';
+import clsx from 'clsx';
+
+import { Overview, Picture, Description, BookingForm } from '@components';
 
 import css from './Details.module.css';
-import details from './faceCamper.json';
+import details from './fakeCamper.json';
+
+const navLinkClass = ({ isActive }) => clsx(css.link, isActive && css.active);
 
 export default function Details() {
   const { id } = useParams();
@@ -19,5 +24,40 @@ export default function Details() {
   //   getCamper();
   // }, [id]);
 
-  return <main className={css.details}>Details page</main>;
+  return (
+    <main className={css.details}>
+      <Overview
+        location={details.location}
+        name={details.name}
+        price={details.price}
+        reviews={details.reviews}
+        rating={details.rating}
+      />
+
+      <ul className={css.gallery}>
+        {details?.gallery?.length > 0 &&
+          details.gallery.map((item, idx) => (
+            <li key={idx}>
+              <Picture poster={item} alt={details.name} />
+            </li>
+          ))}
+      </ul>
+
+      <Description description={details.description} />
+
+      <nav className={css.nav}>
+        <NavLink className={navLinkClass} to="">
+          Features
+        </NavLink>
+        <NavLink className={navLinkClass} to="reviews">
+          Reviews
+        </NavLink>
+      </nav>
+
+      <div className={css.wrapper}>
+        <Outlet />
+        <BookingForm />
+      </div>
+    </main>
+  );
 }

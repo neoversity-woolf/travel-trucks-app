@@ -1,0 +1,30 @@
+.form {
+  padding: 2.75rem;
+  border-radius: 10px;
+  border: 1px solid var(--Gray-light, #dadde1);
+}
+.caption {
+  margin-bottom: 0.5rem;
+  /* H3 */
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 120% */
+  color: var(--Main, #101828);
+}
+.lead {
+  /* Body */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  color: var(--Gray, #6c717b);
+}
+.group {
+  display: grid;
+  gap: 0.875rem;
+
+  margin: 1.5rem 0;
+}

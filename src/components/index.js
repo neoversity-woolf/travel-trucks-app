@@ -1,5 +1,18 @@
-export { default as Header } from '@components/Header/Header';
-export { default as CampersFilter } from '@components/CampersFilter/CampersFilter';
-export { default as CampersList } from '@components/CampersList/CampersList';
-export { default as Card } from '@components/camper/Card/Card';
-export { default as Button } from '@components/Button/Button';
+export { default as Header } from './Header/Header';
+export { default as CampersFilter } from './CampersFilter/CampersFilter';
+export { default as CampersList } from './CampersList/CampersList';
+export { default as CamperDetails } from './CamperDetails/CamperDetails';
+export { default as Button } from './Button/Button';
+export { default as Features } from './Features/Features';
+export { default as Reviews } from './Reviews/Reviews';
+
+export { BookingForm, TextField, CommentField } from './forms';
+
+export {
+  Badge,
+  BadgesList,
+  Overview,
+  Picture,
+  Description,
+  Card,
+} from './camper';

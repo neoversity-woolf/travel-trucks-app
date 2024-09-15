@@ -1,0 +1,31 @@
+.detailsInfo {
+}
+.detailsCaption {
+  margin-bottom: 1.5rem;
+  /* H3 */
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 120% */
+  color: var(--Main, #101828);
+}
+.detailsList {
+  display: grid;
+  gap: 1rem;
+
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--Gray-light, #dadde1);
+}
+.detailsItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Body 2 */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  color: var(--Main, #101828);
+}

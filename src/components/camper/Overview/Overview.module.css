@@ -1,0 +1,64 @@
+.overview {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  gap: 0.5rem;
+}
+.overviewGrid {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-template-areas:
+    'title price fav'
+    'reviews reviews reviews';
+  gap: 0.5rem 0.75rem;
+}
+.title {
+  flex-grow: 1;
+  /* H2 */
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 133.333% */
+  color: var(--Main, #101828);
+
+  :is(.overviewGrid) & {
+    grid-area: title;
+  }
+}
+.price {
+  /* H2 */
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 133.333% */
+  color: var(--Main, #101828);
+
+  :is(.overviewGrid) & {
+    grid-area: price;
+  }
+}
+.wrapper {
+  display: flex;
+  gap: 1rem;
+
+  :is(.overviewGrid) & {
+    grid-area: reviews;
+  }
+}
+.reviews,
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  /* Body underline */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  text-decoration-line: underline;
+  color: var(--Main, #101828);
+}
