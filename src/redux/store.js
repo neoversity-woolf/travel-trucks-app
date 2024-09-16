@@ -9,13 +9,13 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import { campersReducer } from './campers/slice';
-import { filtersReducer } from './filters/slice';
-import { persistentComponentsReducer } from './persistentComponents/slice';
+import { campersReducer } from './campersSlice';
+import { filtersReducer } from './filtersSlice';
+import { applicationStorageReducer } from './applicationStorageSlice';
 import storage from 'redux-persist/lib/storage';
 
 const persistConfig = {
-  key: 'persistentComponents',
+  key: 'campersPersistentComponents',
   storage,
   whitelist: ['favorites', 'booking'],
 };
@@ -26,7 +26,7 @@ export const store = configureStore({
     filters: filtersReducer,
     persistentComponents: persistReducer(
       persistConfig,
-      persistentComponentsReducer
+      applicationStorageReducer
     ),
   },
   middleware: getDefaultMiddleware =>

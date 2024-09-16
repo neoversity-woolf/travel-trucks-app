@@ -5,7 +5,8 @@
 }
 
 .star {
+  fill: #f2f4f7;
   &.active {
-    color: #ffc531;
+    fill: #ffc531;
   }
 }

@@ -5,7 +5,7 @@ const filtersSlice = createSlice({
   initialState: {
     filters: {
       location: '',
-      type: '',
+      form: '',
       equipment: [],
     },
   },

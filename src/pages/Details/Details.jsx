@@ -6,7 +6,8 @@ import { Overview, Picture, Description, BookingForm } from '@components';
 import css from './Details.module.css';
 import details from './fakeCamper.json';
 
-const navLinkClass = ({ isActive }) => clsx(css.link, isActive && css.active);
+const navLinkClass = ({ isActive }) =>
+  clsx(css.link, isActive ? css.active : '');
 
 export default function Details() {
   const { id } = useParams();
@@ -46,7 +47,7 @@ export default function Details() {
       <Description description={details.description} />
 
       <nav className={css.nav}>
-        <NavLink className={navLinkClass} to="">
+        <NavLink className={navLinkClass} to="./" end>
           Features
         </NavLink>
         <NavLink className={navLinkClass} to="reviews">

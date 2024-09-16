@@ -1,0 +1,56 @@
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    'avatar .'
+    'avatar .';
+  grid-template-columns: auto 1fr;
+  row-gap: 0.25rem;
+  column-gap: 1rem;
+}
+
+.avatar {
+  grid-area: avatar;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 3.75rem;
+  height: 3.75rem;
+  background: var(--Badges, #f2f4f7);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.placeholder {
+  /* H2 */
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 133.333% */
+  color: var(--Button, #e44848);
+}
+.name {
+  align-self: end;
+
+  + div {
+    align-self: start;
+  }
+}
+.comment {
+  margin-top: 1rem;
+
+  /* Body */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  color: var(--Text, #475467);
+}
