@@ -24,12 +24,12 @@ export default function CampersFilter() {
             <input
               className={css.field}
               list="campersLocation"
-              name="campersLocation"
+              name="location"
               placeholder="Kyiv, Ukraine"
             />
             <datalist id="campersLocation">
-              <option value="Kyiv">Kyiv, Ukraine</option>
-              <option value="Kharkiv">Kharkiv, Ukraine</option>
+              <option value="kyiv">Kyiv, Ukraine</option>
+              <option value="kharkiv">Kharkiv, Ukraine</option>
             </datalist>
           </label>
         </fieldset>
@@ -64,9 +64,9 @@ export default function CampersFilter() {
               <input
                 className="visuallyHidden"
                 type="checkbox"
-                name="camperEquipment"
+                name="kitchen"
                 id=""
-                value="kitchen"
+                value="true"
               />
               <BsCupHot size={32} />
               <span className={css.optionText}>Kitchen</span>
@@ -75,9 +75,9 @@ export default function CampersFilter() {
               <input
                 className="visuallyHidden"
                 type="checkbox"
-                name="camperEquipment"
+                name="TV"
                 id=""
-                value="tv"
+                value="true"
               />
               <BsTv size={32} />
               <span className={css.optionText}>TV</span>
@@ -86,9 +86,9 @@ export default function CampersFilter() {
               <input
                 className="visuallyHidden"
                 type="checkbox"
-                name="camperEquipment"
+                name="bathroom"
                 id=""
-                value="Bathroom"
+                value="true"
               />
               <BsDroplet size={32} />
               <span className={css.optionText}>Bathroom</span>
@@ -101,7 +101,7 @@ export default function CampersFilter() {
               <input
                 className="visuallyHidden"
                 type="radio"
-                name="camperType"
+                name="form"
                 value="van"
               />
               <BsGrid1X2 size={32} />
@@ -111,7 +111,7 @@ export default function CampersFilter() {
               <input
                 className="visuallyHidden"
                 type="radio"
-                name="camperType"
+                name="form"
                 value="fullyIntegrated"
               />
               <BsGrid size={32} />
@@ -121,7 +121,7 @@ export default function CampersFilter() {
               <input
                 className="visuallyHidden"
                 type="radio"
-                name="camperType"
+                name="form"
                 value="alcove"
               />
               <BsGrid3X3Gap size={32} />

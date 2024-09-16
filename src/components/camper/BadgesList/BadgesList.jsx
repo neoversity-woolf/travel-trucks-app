@@ -1,19 +1,7 @@
 import { Badge } from '@components/camper';
-import css from './BadgesList.module.css';
+import { badges } from '@utils/constants/badges';
 
-const badges = [
-  { transmission: 'manual' },
-  { engine: 'petrol' },
-  { AC: true },
-  { bathroom: true },
-  { kitchen: true },
-  { TV: true },
-  { radio: true },
-  { refrigerator: true },
-  { microwave: true },
-  { gas: false },
-  { water: true },
-];
+import css from './BadgesList.module.css';
 
 export default function BadgesList() {
   return (
