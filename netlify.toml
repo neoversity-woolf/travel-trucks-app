@@ -1,6 +1,6 @@
 [build]
-  publish = "build" # Директорія з файлами для розгортання (зазвичай "build" або "dist" після компіляції)
-  command = "npm run build" # Команда для збірки проекту (залежить від вашого пакетного менеджера)
+  publish = "dist"
+  command = "npm run build"
 
 [[redirects]]
   from = "/*"
