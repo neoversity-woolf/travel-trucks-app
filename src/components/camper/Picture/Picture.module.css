@@ -4,7 +4,8 @@
   border-radius: 0.625rem;
 }
 .cardIll {
-  aspect-ratio: 0.91 / 1;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   transition: 400ms ease-out;
