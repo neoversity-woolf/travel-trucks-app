@@ -3,6 +3,7 @@
   display: grid;
   grid-template-columns: auto;
   gap: 0.5rem;
+  align-items: start;
 }
 .overviewGrid {
   display: grid;
@@ -61,4 +62,10 @@
   line-height: 24px; /* 150% */
   text-decoration-line: underline;
   color: var(--Main, #101828);
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.25rem;
 }

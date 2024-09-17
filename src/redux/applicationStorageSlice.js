@@ -9,7 +9,6 @@ const applicationStorageSlice = createSlice({
   reducers: {
     changeBooking(state, action) {
       const { id, date, email } = action.payload;
-
       state.booking = {
         ...state.booking,
         [id]: { ...state.booking[id], [date]: email },
@@ -18,7 +17,7 @@ const applicationStorageSlice = createSlice({
     switchFavorites(state, action) {
       if (state.favorites.includes(action.payload)) {
         state.favorites = state.favorites.filter(
-          favorite_i => favorite_i !== action.payload
+          item => item !== action.payload
         );
       } else {
         state.favorites = [...state.favorites, action.payload];

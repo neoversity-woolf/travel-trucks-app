@@ -54,7 +54,11 @@ export default function Overview({
 
       <p className={css.price}>€{price}.00</p>
       {isGrid && (
-        <button onClick={() => handleClick(id)} type="button">
+        <button
+          className={css.btn}
+          onClick={() => handleClick(id)}
+          type="button"
+        >
           <BsSuitHeart
             size={24}
             color={favorites.includes(id) ? '#E44848' : '#101828'}

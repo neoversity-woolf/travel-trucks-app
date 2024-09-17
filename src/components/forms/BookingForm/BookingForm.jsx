@@ -39,13 +39,13 @@ export default function BookingForm({ camperId }) {
       await BookingValidationSchema.validate(values, { abortEarly: false });
       const bookingDate = format(values.date, 'dd/MM/yyyy');
 
-      dispatch(
-        changeBooking({
-          id: camperId,
-          date: bookingDate,
-          email: values.email,
-        })
-      );
+      const bookingInfo = {
+        id: camperId,
+        date: bookingDate,
+        email: values.userEmail,
+      };
+
+      dispatch(changeBooking(bookingInfo));
       toast.success('Form submitted successfully!');
       actions.resetForm();
     } catch (error) {
