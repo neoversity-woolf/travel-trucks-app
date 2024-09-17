@@ -6,33 +6,27 @@ const filtersSlice = createSlice({
     filters: {
       location: '',
       form: null,
-      equipment: {
-        transmission: false,
-        AC: false,
-        TV: false,
-        bathroom: false,
-        kitchen: false,
-      },
+      transmission: false,
+      AC: false,
+      TV: false,
+      bathroom: false,
+      kitchen: false,
     },
   },
   reducers: {
     updateLocation: (state, action) => {
       state.filters.location = action.payload;
     },
-    updateForm: (state, action) => {
-      state.filters.form = action.payload;
-    },
-    updateEquipment: (state, action) => {
+    updateFilters: (state, action) => {
       state.filters.equipment = {
-        ...state.filters.equipment,
+        ...state.filters,
         ...action.payload,
       };
     },
   },
 });
 
-export const { updateLocation, updateForm, updateEquipment } =
-  filtersSlice.actions;
+export const { updateLocation, updateFilters } = filtersSlice.actions;
 
 export const { changeFilter } = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;

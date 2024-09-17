@@ -13,23 +13,18 @@ const handleRejected = (state, action) => {
 const campersSlice = createSlice({
   name: 'campers',
   initialState: {
-    openFeatures: true,
-    camperDetails: null,
     items: [],
-    currentPage: 1,
-    currentPageAPI: 1,
-    isLastPage: false,
+    camperDetails: null,
+    currPage: 1,
+    currPageAPI: 1,
     loading: false,
     error: null,
   },
   reducers: {
-    changeOpenFeatures(state, action) {
-      state.openFeatures = action.payload;
-    },
     changeCurrentPage(state, action) {
-      state.currentPage = action.payload;
+      state.currPage = action.payload;
       if (action.payload === 1) {
-        state.currentPageAPI = 1;
+        state.currPageAPI = 1;
         state.items = [];
         state.isLastPage = false;
       }
@@ -44,8 +39,10 @@ const campersSlice = createSlice({
       .addCase(fetchCampers.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
+        console.log(action.payload);
+
         state.items = [...action.payload.items];
-        state.currentPageAPI = action.payload.currentPageAPI;
+        state.currPageAPI = action.payload.currPageAPI;
         state.isLastPage = action.payload.isLastPage;
       })
       .addCase(fetchCampers.rejected, handleRejected)
@@ -59,6 +56,5 @@ const campersSlice = createSlice({
   },
 });
 
-export const { changeCurrentPage, clearCamperDetails, changeOpenFeatures } =
-  campersSlice.actions;
+export const { changeCurrentPage, clearCamperDetails } = campersSlice.actions;
 export const campersReducer = campersSlice.reducer;
