@@ -1,5 +1,5 @@
-import { useId } from 'react';
 import clsx from 'clsx';
+import { Field } from 'formik';
 
 import css from './TextField.module.css';
 
@@ -10,21 +10,15 @@ export default function TextField({
   fieldName,
   required,
   fieldPlaceholder = null,
-  value,
   label = null,
 }) {
-  const fielId = useId();
-
   return (
-    <label className={css.field} htmlFor={fielId}>
-      <input
+    <label className={css.field}>
+      <Field
         className={css.input}
         type={fieldType}
         name={fieldName}
-        id={fielId}
         placeholder={fieldPlaceholder}
-        value={value}
-        required={required}
       />
       {label && <span className={labelClass(required)}>{label}</span>}
     </label>

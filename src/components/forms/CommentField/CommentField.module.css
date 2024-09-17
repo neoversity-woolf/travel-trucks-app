@@ -51,7 +51,8 @@
   transition-property: transform;
   transition-delay: 150ms;
 
-  .comment:focus + & {
+  .comment:focus + &,
+  .comment:not(:placeholder-shown) + & {
     transform: translateY(-74%) scale(0.84);
     transition-delay: 0ms;
   }

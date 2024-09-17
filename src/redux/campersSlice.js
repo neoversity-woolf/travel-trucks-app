@@ -14,7 +14,7 @@ const campersSlice = createSlice({
   name: 'campers',
   initialState: {
     openFeatures: true,
-    currentCamper: null,
+    camperDetails: null,
     items: [],
     currentPage: 1,
     currentPageAPI: 1,
@@ -34,8 +34,8 @@ const campersSlice = createSlice({
         state.isLastPage = false;
       }
     },
-    clearCurrentCamper(state) {
-      state.currentCamper = null;
+    clearCamperDetails(state) {
+      state.camperDetails = null;
     },
   },
   extraReducers: builder => {
@@ -53,12 +53,12 @@ const campersSlice = createSlice({
       .addCase(fetchCamperById.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
-        state.currentCamper = action.payload;
+        state.camperDetails = action.payload;
       })
       .addCase(fetchCamperById.rejected, handleRejected);
   },
 });
 
-export const { changeCurrentPage, clearCurrentCamper, changeOpenFeatures } =
+export const { changeCurrentPage, clearCamperDetails, changeOpenFeatures } =
   campersSlice.actions;
 export const campersReducer = campersSlice.reducer;

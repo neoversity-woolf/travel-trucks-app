@@ -51,7 +51,8 @@
   transition-property: transform;
   transition-delay: 150ms;
 
-  .input:focus + & {
+  .input:focus + &,
+  .input:not(:placeholder-shown) + & {
     transform: translateY(-118%) scale(0.84);
     transition-delay: 0ms;
   }

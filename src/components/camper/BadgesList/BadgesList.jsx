@@ -1,9 +1,25 @@
+import { useSelector } from 'react-redux';
 import { Badge } from '@components/camper';
-import { badges } from '@utils/constants/badges';
+import { selectCamperDetails } from '@redux/campersSelectors';
 
 import css from './BadgesList.module.css';
 
 export default function BadgesList() {
+  const camper = useSelector(selectCamperDetails);
+  const badges = [
+    { transmission: camper?.transmission },
+    { engine: camper?.engine },
+    { AC: camper?.AC },
+    { bathroom: camper?.bathroom },
+    { kitchen: camper?.kitchen },
+    { TV: camper?.TV },
+    { radio: camper?.radio },
+    { refrigerator: camper?.refrigerator },
+    { microwave: camper?.microwave },
+    { gas: camper?.gas },
+    { water: camper?.water },
+  ];
+
   return (
     <ul className={css.badges}>
       {badges.map((badge, idx) => {

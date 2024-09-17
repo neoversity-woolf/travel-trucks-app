@@ -1,5 +1,5 @@
-import { useId } from 'react';
 import clsx from 'clsx';
+import { Field } from 'formik';
 
 import css from './CommentField.module.css';
 
@@ -11,16 +11,15 @@ export default function CommentField({
   required,
   label = null,
 }) {
-  const commentId = useId();
   return (
-    <label className={css.field} htmlFor={commentId}>
-      <textarea
+    <label className={css.field}>
+      <Field
         className={css.comment}
         name={commentName}
-        id={commentId}
         placeholder={commentPlaceholder}
         required={required}
-      ></textarea>
+        as="textarea"
+      ></Field>
       {label && <span className={labelClass(required)}>{label}</span>}
     </label>
   );

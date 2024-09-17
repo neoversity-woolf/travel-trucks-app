@@ -18,7 +18,7 @@ export default function Card({
       <Picture poster={poster} alt={name} />
 
       <div className={css.cardBody}>
-        <Overview {...{ price, rating, location, reviews, name }} isGrid />
+        <Overview {...{ id, price, rating, location, reviews, name }} isGrid />
 
         <div className={css.cardCenter}>
           <Description description={description} short />

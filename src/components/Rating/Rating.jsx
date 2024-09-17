@@ -14,8 +14,6 @@ export default function Rating({ ratingCount, activeStars, place = false }) {
           .fill()
           .map((_, idx) => {
             const isActive = activeStars >= idx + 1;
-            console.log(isActive);
-
             return (
               <BsStarFill
                 className={ratingClass(isActive)}

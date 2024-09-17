@@ -1,10 +1,10 @@
 .card {
-  display: flex;
-  align-items: start;
+  display: grid;
+  grid-template-columns: 0.34fr 0.66fr;
   gap: 1.5rem;
 
   padding: 1.5rem;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   border: 1px solid var(--Gray-light, #dadde1);
   background: var(--White, #fff);
 }

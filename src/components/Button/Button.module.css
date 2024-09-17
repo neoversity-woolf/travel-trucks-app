@@ -11,7 +11,7 @@
   border: 1px solid transparent;
   background-color: transparent;
   transition: 200ms ease-in;
-  transition-property: color, background-color;
+  transition-property: color, background-color, border-color, transform;
 }
 
 .filled {

@@ -1,50 +1,65 @@
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Outlet, useParams } from 'react-router-dom';
 import clsx from 'clsx';
 
 import { Overview, Picture, Description, BookingForm } from '@components';
+import { fetchCamperById } from '@redux/campersOperations';
+import {
+  selectLoading,
+  selectError,
+  selectCamperDetails,
+} from '@redux/campersSelectors';
+import { clearCamperDetails } from '@redux/campersSlice';
 
 import css from './Details.module.css';
-import details from './fakeCamper.json';
 
 const navLinkClass = ({ isActive }) =>
   clsx(css.link, isActive ? css.active : '');
 
 export default function Details() {
   const { id } = useParams();
-  console.log(details);
+  const dispatch = useDispatch();
+  const camper = useSelector(selectCamperDetails);
+  const loading = useSelector(selectLoading);
+  const error = useSelector(selectError);
 
-  // Fetch camper by id
-  // useEffect(() => {
-  //   async function getCamper() {
-  //     const response = await fetch(
-  //       `https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers/${id}`
-  //     );
-  //     const details = await response.json();
-  //     setCamper(details);
-  //   }
-  //   getCamper();
-  // }, [id]);
+  useEffect(() => {
+    dispatch(fetchCamperById(id));
+
+    return () => {
+      dispatch(clearCamperDetails());
+    };
+  }, [dispatch, id]);
+
+  if (!camper || loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Oops! We have some error</p>;
+  }
 
   return (
     <main className={css.details}>
       <Overview
-        location={details.location}
-        name={details.name}
-        price={details.price}
-        reviews={details.reviews}
-        rating={details.rating}
+        location={camper?.location}
+        name={camper?.name}
+        price={camper?.price}
+        reviews={camper?.reviews}
+        rating={camper?.rating}
       />
 
       <ul className={css.gallery}>
-        {details?.gallery?.length > 0 &&
-          details.gallery.map((item, idx) => (
+        {camper?.gallery?.length > 0 &&
+          camper.gallery.map((item, idx) => (
             <li key={idx}>
-              <Picture poster={item} alt={details.name} />
+              <Picture poster={item} alt={camper.name} />
             </li>
           ))}
       </ul>
 
-      <Description description={details.description} />
+      <Description description={camper?.description} />
 
       <nav className={css.nav}>
         <NavLink className={navLinkClass} to="./" end>
@@ -57,7 +72,7 @@ export default function Details() {
 
       <div className={css.wrapper}>
         <Outlet />
-        <BookingForm />
+        <BookingForm camperId={id} />
       </div>
     </main>
   );

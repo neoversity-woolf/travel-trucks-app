@@ -1,5 +1,5 @@
 .cardThumb {
-  flex-shrink: 0.9;
+  max-width: 100%;
   overflow: hidden;
   border-radius: 0.625rem;
 }
@@ -7,4 +7,5 @@
   aspect-ratio: 0.91 / 1;
   object-fit: cover;
   object-position: center;
+  transition: 400ms ease-out;
 }

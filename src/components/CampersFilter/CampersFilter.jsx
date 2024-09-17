@@ -16,8 +16,18 @@ import { locations } from '@utils/constants/campersLocation';
 
 import css from './CampersFilter.module.css';
 
+const initialValues = {
+  location: '',
+  AC: false,
+  TV: false,
+  bathroom: false,
+  form: null,
+  kitchen: false,
+  transmission: null,
+};
+
 export default function CampersFilter() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const handleSubmit = values => {
     console.log(values);
@@ -26,15 +36,7 @@ export default function CampersFilter() {
   return (
     <aside className={css.filters}>
       <Formik
-        initialValues={{
-          location: '',
-          AC: false,
-          TV: false,
-          bathroom: false,
-          form: null,
-          kitchen: false,
-          transmission: null,
-        }}
+        initialValues={initialValues}
         onSubmit={values => handleSubmit(values)}
       >
         <Form className={css.form}>

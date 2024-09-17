@@ -1,5 +1,4 @@
-import { CamperDetails } from '@components';
-import { BadgesList } from '@components/camper';
+import { Details, BadgesList } from '@components';
 
 import css from './Features.module.css';
 
@@ -8,7 +7,7 @@ export default function Features() {
     <article className={css.features}>
       <h2 className="visuallyHidden">Features</h2>
       <BadgesList />
-      <CamperDetails />
+      <Details />
     </article>
   );
 }
