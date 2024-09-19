@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Card, Button } from '@components';
 import { selectFilters } from '@redux/filtersSelectors';
 import { selectCampers, selectEndOfCollection } from '@redux/campersSelectors';
-import { loadNextPageAndFetchCampers } from '@redux/campersOperations';
+import { fetchCampers } from '@redux/campersOperations';
 
 import css from './CampersList.module.css';
 
@@ -23,7 +23,7 @@ export default function CampersList() {
 
       {!isEndOfCollection && (
         <Button
-          onClick={() => dispatch(loadNextPageAndFetchCampers(filters))}
+          onClick={() => dispatch(fetchCampers({ filters, isNextPage: true }))}
           outlined
           centered
         >

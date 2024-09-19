@@ -1,9 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {
-  fetchCampers,
-  fetchCamperById,
-  loadNextPageAndFetchCampers,
-} from '@redux/campersOperations';
+import { fetchCampers, fetchCamperById } from '@redux/campersOperations';
 
 const handlePending = state => {
   state.loading = true;
@@ -26,12 +22,12 @@ const campersSlice = createSlice({
   },
   reducers: {
     changePage(state, action) {
+      if (action.payload === 1) {
+        state.items = [];
+        state.page = 1;
+        state.isEndOfCollection = false;
+      }
       state.page = action.payload;
-      // if (action.payload === 1) {
-      //   state.page = 1;
-      //   state.items = [];
-      //   state.isLastPage = false;
-      // }
     },
     clearCamperDetails(state) {
       state.camperDetails = null;
@@ -54,16 +50,7 @@ const campersSlice = createSlice({
         state.error = null;
         state.camperDetails = action.payload;
       })
-      .addCase(fetchCamperById.rejected, handleRejected)
-      .addCase(loadNextPageAndFetchCampers.pending, handlePending)
-      .addCase(loadNextPageAndFetchCampers.fulfilled, (state, action) => {
-        state.loading = false;
-        state.error = null;
-        state.page = action.payload.page;
-        state.isEndOfCollection = action.payload.isEndOfCollection;
-        state.items = state.items.concat(action.payload.items);
-      })
-      .addCase(loadNextPageAndFetchCampers.rejected, handleRejected);
+      .addCase(fetchCamperById.rejected, handleRejected);
   },
 });
 

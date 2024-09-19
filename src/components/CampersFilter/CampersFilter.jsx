@@ -35,7 +35,7 @@ export default function CampersFilter() {
   const handleSubmit = (values, actions) => {
     dispatch(updateFilters(values));
     dispatch(changePage(1));
-    dispatch(fetchCampers(values));
+    dispatch(fetchCampers({ filters: values }));
 
     actions.resetForm();
   };

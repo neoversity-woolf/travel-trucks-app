@@ -8,7 +8,7 @@ import css from './Catalog.module.css';
 export default function Catalog() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchCampers());
+    dispatch(fetchCampers({ filters: {} }));
   }, [dispatch]);
 
   return (

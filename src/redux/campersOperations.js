@@ -6,46 +6,65 @@ import { filterFalseValues } from '@utils/helpers/filterFalseValues';
 
 axios.defaults.baseURL = BASE_URL;
 
+const handleRequest = async (url, errorMessage) => {
+  try {
+    const response = await axios.get(url);
+    if (response.status !== 200) {
+      throw new Error(errorMessage);
+    }
+    return response;
+  } catch (error) {
+    toast.error(errorMessage);
+    throw error;
+  }
+};
+
+const checkEndOfCollection = (total, page) => {
+  const totalPages = Math.ceil(total / PER_PAGE);
+  return page >= totalPages || totalPages === 1;
+};
+
 export const fetchCampers = createAsyncThunk(
   'campers/fetchCampers',
-  async (_, thunkAPI) => {
-    try {
-      const {
-        campers: { page, isEndOfCollection },
-      } = thunkAPI.getState();
+  async ({ filters, isNextPage = false }, thunkAPI) => {
+    const {
+      campers: { page, items },
+    } = thunkAPI.getState();
 
-      const response = await axios.get(
-        `/campers?page=${page}&limit=${PER_PAGE}`
+    const currentPage = isNextPage ? page + 1 : page;
+
+    try {
+      const filteredParams = filterFalseValues(filters);
+      const params = new URLSearchParams(filteredParams);
+      const url = `/campers?page=${currentPage}&limit=${PER_PAGE}&${params}`;
+      const response = await handleRequest(url, 'Failed to fetch campers.');
+
+      const isEndOfCollection = checkEndOfCollection(
+        response.data.total,
+        currentPage
       );
 
-      if (response.status !== 200) {
-        toast.error('Sorry, something went wrong on server.');
-        return {
-          items: [],
-          page,
-          isEndOfCollection,
-        };
-      }
       if (!response.data.total) {
-        toast.error(
-          'Sorry, there are no campers matching your search query.\n Please try again.'
-        );
-
-        return {
-          items: response.data.items,
-          page,
-          isEndOfCollection,
-        };
+        toast.error('No campers matching your search query.');
+        return { items: [], page: currentPage, isEndOfCollection };
+      }
+      if (isEndOfCollection && isNextPage) {
+        toast.success('End of collection.');
+      }
+      if (!isNextPage) {
+        toast.success(`Hooray ✨ We found ${response.data.total} campers.`);
       }
 
-      toast.success(`Hooray ✨ We found ${response.data.total} campers.`);
+      const newItems = isNextPage
+        ? [...items, ...response.data.items]
+        : response.data.items;
+
       return {
-        items: response.data.items,
-        page,
+        items: newItems,
+        page: currentPage,
         isEndOfCollection,
       };
     } catch (error) {
-      toast.error('Sorry, something went wrong on server.');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -57,45 +76,6 @@ export const fetchCamperById = createAsyncThunk(
     try {
       const response = await axios.get(`/campers/${id}`);
       return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
-
-export const loadNextPageAndFetchCampers = createAsyncThunk(
-  'campers/loadNextCampers',
-  async (filters, thunkAPI) => {
-    const {
-      campers: { page, items },
-    } = thunkAPI.getState();
-
-    const nextPage = page + 1;
-
-    try {
-      const filteredParams = filterFalseValues(filters);
-      const params = new URLSearchParams(filteredParams);
-      const response = await axios.get(
-        `/campers?page=${nextPage}&limit=${PER_PAGE}&${params}`
-      );
-
-      let totalPages = Math.ceil(response?.data?.total / PER_PAGE);
-      const isLastPage = nextPage >= totalPages || totalPages === 1;
-
-      if (isLastPage) {
-        toast.success('End of collection.');
-        return {
-          items: response.data.items,
-          page: nextPage,
-          isEndOfCollection: isLastPage,
-        };
-      }
-
-      return {
-        items: response.data.items,
-        page: nextPage,
-        isEndOfCollection: false,
-      };
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
