@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Outlet, useParams } from 'react-router-dom';
 import clsx from 'clsx';
 
+import { NotFound } from '@pages';
 import { Overview, Picture, Description, BookingForm } from '@components';
 import { fetchCamperById } from '@redux/campersOperations';
 import {
@@ -23,14 +24,24 @@ export default function Details() {
   const camper = useSelector(selectCamperDetails);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
+  const isValidId = id => /^[0-9]+$/.test(id);
 
   useEffect(() => {
+    if (!isValidId(id)) {
+      console.log('Invalid ID, cancelling request');
+      return;
+    }
+
     dispatch(fetchCamperById(id));
 
     return () => {
       dispatch(clearCamperDetails());
     };
   }, [dispatch, id]);
+
+  if (!isValidId(id)) {
+    return <NotFound path="/catalog" pageName="Catalog" />;
+  }
 
   if (!camper || loading) {
     return <p>Loading...</p>;

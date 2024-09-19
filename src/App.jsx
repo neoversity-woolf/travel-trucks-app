@@ -23,8 +23,9 @@ function App() {
         <Route path="/catalog/:id" element={<Details />}>
           <Route index element={<Features />} />
           <Route path="reviews" element={<Reviews />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<NotFound path="/" pageName="Home" />} />
       </Routes>
       <Toaster />
     </Suspense>
