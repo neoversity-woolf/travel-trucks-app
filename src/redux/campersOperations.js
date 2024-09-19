@@ -37,7 +37,10 @@ export const fetchCampers = createAsyncThunk(
       const filteredParams = filterFalseValues(filters);
       const params = new URLSearchParams(filteredParams);
       const url = `/campers?page=${currentPage}&limit=${PER_PAGE}&${params}`;
-      const response = await handleRequest(url, 'Failed to fetch campers.');
+      const response = await handleRequest(
+        url,
+        'No campers matching your search query.'
+      );
 
       const isEndOfCollection = checkEndOfCollection(
         response.data.total,
