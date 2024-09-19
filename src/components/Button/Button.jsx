@@ -9,9 +9,14 @@ const buttonClass = ({ filled, outlined, centered, iconOnly }) =>
     iconOnly && css.iconOnly
   );
 
-export default function Button({ children, type = 'button', ...params }) {
+export default function Button({
+  onClick = () => {},
+  children,
+  type = 'button',
+  ...params
+}) {
   return (
-    <button className={buttonClass(params)} type={type}>
+    <button className={buttonClass(params)} type={type} onClick={onClick}>
       {children}
     </button>
   );

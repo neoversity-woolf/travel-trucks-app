@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCampers, fetchCamperById } from './campersOperations';
+import {
+  fetchCampers,
+  fetchCamperById,
+  loadNextPageAndFetchCampers,
+} from '@redux/campersOperations';
 
 const handlePending = state => {
   state.loading = true;
@@ -15,19 +19,19 @@ const campersSlice = createSlice({
   initialState: {
     items: [],
     camperDetails: null,
-    currPage: 1,
-    currPageAPI: 1,
+    page: 1,
+    isEndOfCollection: false,
     loading: false,
     error: null,
   },
   reducers: {
-    changeCurrentPage(state, action) {
-      state.currPage = action.payload;
-      if (action.payload === 1) {
-        state.currPageAPI = 1;
-        state.items = [];
-        state.isLastPage = false;
-      }
+    changePage(state, action) {
+      state.page = action.payload;
+      // if (action.payload === 1) {
+      //   state.page = 1;
+      //   state.items = [];
+      //   state.isLastPage = false;
+      // }
     },
     clearCamperDetails(state) {
       state.camperDetails = null;
@@ -39,11 +43,9 @@ const campersSlice = createSlice({
       .addCase(fetchCampers.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
-        console.log(action.payload);
-
         state.items = [...action.payload.items];
-        state.currPageAPI = action.payload.currPageAPI;
-        state.isLastPage = action.payload.isLastPage;
+        state.page = action.payload.page;
+        state.isEndOfCollection = action.payload.isEndOfCollection;
       })
       .addCase(fetchCampers.rejected, handleRejected)
       .addCase(fetchCamperById.pending, handlePending)
@@ -52,9 +54,18 @@ const campersSlice = createSlice({
         state.error = null;
         state.camperDetails = action.payload;
       })
-      .addCase(fetchCamperById.rejected, handleRejected);
+      .addCase(fetchCamperById.rejected, handleRejected)
+      .addCase(loadNextPageAndFetchCampers.pending, handlePending)
+      .addCase(loadNextPageAndFetchCampers.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        state.page = action.payload.page;
+        state.isEndOfCollection = action.payload.isEndOfCollection;
+        state.items = state.items.concat(action.payload.items);
+      })
+      .addCase(loadNextPageAndFetchCampers.rejected, handleRejected);
   },
 });
 
-export const { changeCurrentPage, clearCamperDetails } = campersSlice.actions;
+export const { changePage, clearCamperDetails } = campersSlice.actions;
 export const campersReducer = campersSlice.reducer;

@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {
   BsMap,
   BsWind,
@@ -13,8 +13,8 @@ import {
 import { Formik, Form, Field } from 'formik';
 import { Button } from '@components';
 import { locations } from '@utils/constants/campersLocation';
-import { updateLocation, updateFilters } from '@redux/filtersSlice';
-import { changeCurrentPage } from '@redux/campersSlice';
+import { updateFilters } from '@redux/filtersSlice';
+import { changePage } from '@redux/campersSlice';
 import { fetchCampers } from '@redux/campersOperations';
 
 import css from './CampersFilter.module.css';
@@ -33,10 +33,8 @@ export default function CampersFilter() {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    const { location, ...filters } = values;
-    dispatch(updateLocation(location));
-    dispatch(updateFilters(filters));
-    dispatch(changeCurrentPage(1));
+    dispatch(updateFilters(values));
+    dispatch(changePage(1));
     dispatch(fetchCampers(values));
 
     actions.resetForm();
@@ -133,7 +131,7 @@ export default function CampersFilter() {
                     className="visuallyHidden"
                     type="radio"
                     name="form"
-                    value="van"
+                    value="panelTruck"
                   />
                   <BsGrid1X2 size={32} />
                   <span className={css.optionText}>Van</span>

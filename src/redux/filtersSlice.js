@@ -14,12 +14,8 @@ const filtersSlice = createSlice({
     },
   },
   reducers: {
-    updateLocation: (state, action) => {
-      state.filters.location = action.payload;
-    },
     updateFilters: (state, action) => {
-      state.filters.equipment = {
-        ...state.filters,
+      state.filters = {
         ...action.payload,
       };
     },

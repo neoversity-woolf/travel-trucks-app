@@ -3,6 +3,7 @@ import { BsMap, BsStarFill, BsSuitHeart } from 'react-icons/bs';
 import toast from 'react-hot-toast';
 import clsx from 'clsx';
 
+import { Button } from '@components';
 import { selectFavorites } from '@redux/applicationStorageSelectors';
 import { switchFavorites } from '@redux/applicationStorageSlice';
 
@@ -54,7 +55,7 @@ export default function Overview({
 
       <p className={css.price}>€{price}.00</p>
       {isGrid && (
-        <button
+        <Button
           className={css.btn}
           onClick={() => handleClick(id)}
           type="button"
@@ -63,7 +64,7 @@ export default function Overview({
             size={24}
             color={favorites.includes(id) ? '#E44848' : '#101828'}
           />
-        </button>
+        </Button>
       )}
     </div>
   );

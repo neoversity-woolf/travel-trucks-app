@@ -12,6 +12,7 @@ export default function Card({
   description,
   gallery: [poster],
   reviews,
+  ...camper
 }) {
   return (
     <li className={css.card}>
@@ -25,7 +26,7 @@ export default function Card({
         </div>
 
         <div className={css.cardBottom}>
-          <BadgesList />
+          <BadgesList camper={camper} />
         </div>
 
         <Link className="pageLink filled" to={`${id}`}>

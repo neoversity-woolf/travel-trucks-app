@@ -1,11 +1,8 @@
-import { useSelector } from 'react-redux';
 import { Badge } from '@components/camper';
-import { selectCamperDetails } from '@redux/campersSelectors';
 
 import css from './BadgesList.module.css';
 
-export default function BadgesList() {
-  const camper = useSelector(selectCamperDetails);
+export default function BadgesList({ camper }) {
   const badges = [
     { transmission: camper?.transmission },
     { engine: camper?.engine },

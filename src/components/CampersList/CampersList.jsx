@@ -1,11 +1,16 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Card, Button } from '@components';
-import { selectCampers } from '@redux/campersSelectors';
+import { selectFilters } from '@redux/filtersSelectors';
+import { selectCampers, selectEndOfCollection } from '@redux/campersSelectors';
+import { loadNextPageAndFetchCampers } from '@redux/campersOperations';
 
 import css from './CampersList.module.css';
 
 export default function CampersList() {
+  const dispatch = useDispatch();
   const campers = useSelector(selectCampers);
+  const filters = useSelector(selectFilters);
+  const isEndOfCollection = useSelector(selectEndOfCollection);
 
   return (
     <section className={css.campers}>
@@ -16,9 +21,15 @@ export default function CampersList() {
         ))}
       </ul>
 
-      <Button outlined centered onClick={() => {}}>
-        Load more
-      </Button>
+      {!isEndOfCollection && (
+        <Button
+          onClick={() => dispatch(loadNextPageAndFetchCampers(filters))}
+          outlined
+          centered
+        >
+          Load more
+        </Button>
+      )}
     </section>
   );
 }
