@@ -1,4 +1,5 @@
 .form {
+  grid-area: book-form;
   padding: 2.75rem;
   border-radius: 10px;
   border: 1px solid var(--Gray-light, #dadde1);

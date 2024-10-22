@@ -1,10 +1,18 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, Outlet, useParams } from 'react-router-dom';
-import clsx from 'clsx';
+import { useParams } from 'react-router-dom';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 import { NotFound } from '@pages';
-import { Overview, Picture, Description, BookingForm } from '@components';
+import {
+  Overview,
+  Picture,
+  Description,
+  BookingForm,
+  Features,
+  Reviews,
+} from '@components';
 import { fetchCamperById } from '@redux/campersOperations';
 import {
   selectLoading,
@@ -14,9 +22,6 @@ import {
 import { clearCamperDetails } from '@redux/campersSlice';
 
 import css from './Details.module.css';
-
-const navLinkClass = ({ isActive }) =>
-  clsx(css.link, isActive ? css.active : '');
 
 export default function Details() {
   const { id } = useParams();
@@ -72,19 +77,20 @@ export default function Details() {
 
       <Description description={camper?.description} />
 
-      <nav className={css.nav}>
-        <NavLink className={navLinkClass} to="./" end>
-          Features
-        </NavLink>
-        <NavLink className={navLinkClass} to="reviews">
-          Reviews
-        </NavLink>
-      </nav>
+      <Tabs className={css.wrapper}>
+        <TabList>
+          <Tab>Features</Tab>
+          <Tab>Reviews</Tab>
+        </TabList>
 
-      <div className={css.wrapper}>
-        <Outlet />
+        <TabPanel>
+          <Features />
+        </TabPanel>
+        <TabPanel>
+          <Reviews />
+        </TabPanel>
         <BookingForm camperId={id} />
-      </div>
+      </Tabs>
     </main>
   );
 }

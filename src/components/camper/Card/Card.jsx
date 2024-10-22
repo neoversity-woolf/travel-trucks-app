@@ -29,7 +29,12 @@ export default function Card({
           <BadgesList camper={camper} />
         </div>
 
-        <Link className="pageLink filled" to={`${id}`}>
+        <Link
+          className="pageLink filled"
+          to={`${id}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Show more
         </Link>
       </div>

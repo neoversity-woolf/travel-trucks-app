@@ -38,11 +38,47 @@
     }
   }
 }
-
 .wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    'tabs tabs'
+    'features book-form';
   gap: 2.5rem;
   align-items: start;
   padding-top: 2.75rem;
+}
+
+/* React tabs styles */
+:global(.react-tabs__tab-list) {
+  grid-area: tabs;
+  display: flex;
+  gap: 40px;
+  margin-bottom: 44px;
+  border-color: #dadde1;
+}
+:global(.react-tabs__tab) {
+  position: relative;
+  bottom: 0;
+  padding: 0 0 24px;
+  /* H3 */
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px; /* 120% */
+  color: var(--Main, #101828);
+  border: none;
+}
+:global(.react-tabs__tab:after) {
+  content: '';
+  position: absolute;
+  height: 5px;
+  left: -4px;
+  right: -4px;
+  bottom: -3px !important;
+}
+:global(.react-tabs__tab--selected:after) {
+  background: var(--Button, #e44848);
+}
+:global(.react-tabs__tab:focus:after) {
+  background: var(--Button, #e44848);
 }

@@ -10,16 +10,18 @@ const handleRejected = (state, action) => {
   state.error = action.payload;
 };
 
+const initialState = {
+  items: [],
+  camperDetails: null,
+  page: 1,
+  isEndOfCollection: false,
+  loading: false,
+  error: null,
+};
+
 const campersSlice = createSlice({
   name: 'campers',
-  initialState: {
-    items: [],
-    camperDetails: null,
-    page: 1,
-    isEndOfCollection: false,
-    loading: false,
-    error: null,
-  },
+  initialState,
   reducers: {
     changePage(state, action) {
       if (action.payload === 1) {
@@ -31,6 +33,9 @@ const campersSlice = createSlice({
     },
     clearCamperDetails(state) {
       state.camperDetails = null;
+    },
+    resetState() {
+      return initialState;
     },
   },
   extraReducers: builder => {
@@ -54,5 +59,6 @@ const campersSlice = createSlice({
   },
 });
 
-export const { changePage, clearCamperDetails } = campersSlice.actions;
+export const { changePage, clearCamperDetails, resetState } =
+  campersSlice.actions;
 export const campersReducer = campersSlice.reducer;

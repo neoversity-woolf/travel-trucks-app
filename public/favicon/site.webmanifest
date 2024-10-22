@@ -1,0 +1,22 @@
+{
+  "name": "Travel Trucks - Van Rentals",
+  "short_name": "Travel Trucks",
+  "description": "Add adventure to your life by joining the #TravelTrucks movement. Rent the perfect van and embark on the ultimate road trip experience. Explore, travel, and enjoy freedom on the open road.",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+}
