@@ -7,6 +7,7 @@ export { default as Reviews } from './Reviews/Reviews';
 export { default as ReviewItem } from './ReviewItem/ReviewItem';
 export { default as Rating } from './Rating/Rating';
 export { default as ErrorMessage } from './ErrorMessage/ErrorMessage';
+export { default as CardSkeleton } from './CardSkeleton/CardSkeleton';
 
 export { BookingForm, TextField, DateField, CommentField } from './forms';
 

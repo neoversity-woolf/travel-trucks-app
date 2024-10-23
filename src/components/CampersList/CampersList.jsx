@@ -1,10 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { Card, Button } from '@components';
+import { Card, Button, CardSkeleton } from '@components';
 import { selectFilters } from '@redux/filtersSelectors';
 import {
   selectCampers,
   selectEndOfCollection,
   selectError,
+  selectLoading,
 } from '@redux/campersSelectors';
 import { fetchCampers } from '@redux/campersOperations';
 
@@ -16,17 +17,22 @@ export default function CampersList() {
   const filters = useSelector(selectFilters);
   const isEndOfCollection = useSelector(selectEndOfCollection);
   const error = useSelector(selectError);
+  const loading = useSelector(selectLoading);
 
   return (
     <section className={css.campers}>
       <h2 className="visuallyHidden">Campers list</h2>
       <ul className={css.list}>
-        {campers.map(camper => (
-          <Card {...camper} key={camper.id} />
-        ))}
+        {loading
+          ? Array(4)
+              .fill(0)
+              .map((_, index) => {
+                return <CardSkeleton key={index} />;
+              })
+          : campers.map(camper => <Card {...camper} key={camper.id} />)}
       </ul>
 
-      {!error && !isEndOfCollection && (
+      {!error && !isEndOfCollection && !loading && (
         <Button
           onClick={() => dispatch(fetchCampers({ filters, isNextPage: true }))}
           outlined

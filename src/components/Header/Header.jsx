@@ -6,7 +6,7 @@ import css from './Header.module.css';
 
 const navLinkClass = ({ isActive }) => clsx(css.link, isActive && css.active);
 
-function Header() {
+export default function Header() {
   return (
     <header className={css.header}>
       <Link className={css.logo} to="/">
@@ -23,5 +23,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;

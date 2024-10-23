@@ -25,9 +25,7 @@ export default function Card({
           <Description description={description} short />
         </div>
 
-        <div className={css.cardBottom}>
-          <BadgesList camper={camper} />
-        </div>
+        <div className={css.cardBottom}>{<BadgesList camper={camper} />}</div>
 
         <Link
           className="pageLink filled"

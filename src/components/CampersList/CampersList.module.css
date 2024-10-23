@@ -1,4 +1,5 @@
 .campers {
+  position: relative;
   grid-area: campers;
 }
 
