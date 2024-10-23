@@ -34,8 +34,12 @@ const campersSlice = createSlice({
     clearCamperDetails(state) {
       state.camperDetails = null;
     },
-    resetState() {
-      return initialState;
+    resetState(state) {
+      state.items = [];
+      state.page = 1;
+      state.isEndOfCollection = false;
+      state.loading = false;
+      state.error = null;
     },
   },
   extraReducers: builder => {

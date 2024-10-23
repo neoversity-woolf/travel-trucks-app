@@ -12,8 +12,11 @@ export default function Catalog() {
   const error = useSelector(selectError);
 
   useEffect(() => {
-    dispatch(resetState());
     dispatch(fetchCampers({ filters: {} }));
+
+    return () => {
+      dispatch(resetState());
+    };
   }, [dispatch]);
 
   return (
